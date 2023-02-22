@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таймер медитации</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+        <audio id="my-audio" src="./aud/Wiz Khalifa feat. Charlie Puth - See You Again (feat. Charlie Puth).mp3" loop></audio>
+      <div class="logo">
+        <img class="codify" src="./images/4d427624-fc1d-450d-995f-6090b5470ca2.png" alt="" />
+       <div class="buttons">
+        <button  id="stop" onclick="stop()" class="class">
+            <svg class="stop" fill="#fff" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+       <g id="Play">
+           <path fill="#1b2286" d="M46.0136986,31.1054993L25.1973,20.6973c-0.3096008-0.1532993-0.6777992-0.1387005-0.9727001,0.0438995
+               C23.9297009,20.9237995,23.75,21.2451,23.75,21.5918007v20.8163986c0,0.3467026,0.1797009,0.6679993,0.4745998,0.8506012
+               C24.3848,43.3583984,24.5674,43.4081993,24.75,43.4081993c0.1532993,0,0.3057003-0.035099,0.4473-0.1054001l20.8163986-10.4081993
+               c0.3388023-0.1699982,0.5527-0.5157013,0.5527-0.8945999C46.5663986,31.6210995,46.3525009,31.2754002,46.0136986,31.1054993z
+                M25.75,40.7901001v-17.580101L43.330101,32L25.75,40.7901001z"/>
+           <path fill="#1b2286" d="M32,0C14.3268995,0,0,14.3268995,0,32s14.3268995,32,32,32s32-14.3269005,32-32S49.6730995,0,32,0z M32,62
+               C15.4579,62,2,48.542099,2,32C2,15.4580002,15.4579,2,32,2c16.5419998,0,30,13.4580002,30,30C62,48.542099,48.5419998,62,32,62z"/>
+       </g>
+       </svg></button>
+       <button class="class"  id="start" onclick="start()">
+        <svg class="stop" version="1.0" xmlns="http://www.w3.org/2000/svg"
+        width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000"
+        preserveAspectRatio="xMidYMid meet">
+       <metadata>
+       Created by potrace 1.15, written by Peter Selinger 2001-2017
+       </metadata>
+       <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+       fill="#1b2286" stroke="none">
+       <path d="M6095 12794 c-901 -48 -1763 -273 -2547 -665 -1884 -941 -3187 -2744
+       -3482 -4819 -49 -341 -60 -508 -60 -910 0 -502 31 -821 124 -1280 510 -2519
+       2511 -4508 5030 -4999 439 -86 755 -115 1240 -115 403 0 571 11 910 60 1374
+       197 2629 826 3614 1810 1072 1072 1705 2428 1853 3969 24 252 24 858 0 1110
+       -148 1541 -781 2897 -1853 3969 -1068 1068 -2441 1710 -3959 1851 -162 15
+       -716 27 -870 19z m-965 -6409 l0 -3745 -482 2 -483 3 -3 3730 c-1 2052 0 3736
+       3 3743 3 9 110 12 485 12 l480 0 0 -3745z m3535 0 l0 -3740 -482 -3 -483 -2 0
+       3745 0 3745 483 -2 482 -3 0 -3740z"/>
+       </g>
+       </svg>
+       </button>
+       </div>
+      </div>
+      <form class="timer" onsubmit="app.submit(event)">
+        <div class="info">
+          Установить медитацию на
+          <input
+            type="number"
+            name="time"
+            aria-label="Число минут для медитации"
+            value="10"
+          />
+          минут
+        </div>
+        <div class="countdown">
+          <div class="num" id="min_tens">0</div>
+          <div class="num" id="min">0</div>
+          <div class="dots">:</div>
+          <div class="num" id="sec_tens">0</div>
+          <div class="num" id="sec">0</div>
+        </div>
+        <button type="submit" class="button">
+          <img src="./images/play.svg" alt="Иконка play" />
+          Запустить таймер
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
